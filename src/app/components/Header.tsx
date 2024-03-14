@@ -2,8 +2,10 @@
 import { HeaderButton } from "./HeaderButton";
 import Box from "@mui/material/Box";
 import { useRouter } from "next/navigation";
+import { Paragraph } from "./Paragraph";
 
-export default function Header() {
+// @ts-ignore
+export default function Header(props) {
   const router = useRouter();
   // @ts-ignore
   const onClick = ({ key }) => {
@@ -11,20 +13,50 @@ export default function Header() {
     return router.push(`/${key}`);
   };
   return (
-    <Box style = {{position: 'relative', top: 0, left: 0, width: '100%'}}>
-      <HeaderButton onClick={() => onClick({ key: "" })}>Home</HeaderButton>
+    <Box
+      style={{
+        position: props.position ? props.position : "relative",
+        top: 0,
+        left: 0,
+        width: "100%",
+      }}
+    >
+      <HeaderButton onClick={() => onClick({ key: "" })}>
+        <Paragraph textcolor="black" padding="0" hovercolor="white">
+          {" "}
+          Home
+        </Paragraph>
+      </HeaderButton>
 
       <HeaderButton onClick={() => onClick({ key: "about" })}>
-        About
+        <Paragraph textcolor="black" padding="0" hovercolor="white">
+          {" "}
+          About
+        </Paragraph>
       </HeaderButton>
       <HeaderButton onClick={() => onClick({ key: "media" })}>
-        Media
+        <Paragraph textcolor="black" padding="0" hovercolor="white">
+          {" "}
+          media
+        </Paragraph>
       </HeaderButton>
       <HeaderButton onClick={() => onClick({ key: "contact" })}>
-        Contact
+        <Paragraph textcolor="black" padding="0" hovercolor="white">
+          {" "}
+          contact
+        </Paragraph>
       </HeaderButton>
       <HeaderButton onClick={() => onClick({ key: "resources" })}>
-        Resources
+        <Paragraph textcolor="black" padding="0" hovercolor="white">
+          {" "}
+          resources
+        </Paragraph>
+      </HeaderButton>
+      <HeaderButton onClick={() => onClick({ key: "trivia" })}>
+        <Paragraph textcolor="black" padding="0" hovercolor="white">
+          {" "}
+          trivia game
+        </Paragraph>
       </HeaderButton>
     </Box>
   );

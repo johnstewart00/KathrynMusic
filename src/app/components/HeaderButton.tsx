@@ -8,8 +8,4 @@ export const HeaderButton = styled(Button)`
   background-color: ${Color.lightBlue};
   color: ${Color.black};
   border-radius: 10px;
-  :hover {
-    background-color: ${Color.turquoiseGreen};
-    color: ${Color.white};
-  }
 `;
