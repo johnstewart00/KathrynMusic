@@ -16,7 +16,7 @@ export default function Home() {
       <Header />
       {/* Main Content */}
       <div className="flex-grow">
-        <div className="bg-gray-100 ml-10 my- p-10">
+        <div className="bg-gray-100 ml-10 my-16 p-10">
           <div className="text-9xl">Kathryn Stewart</div>
 
           <div className="text-lg my-9">
