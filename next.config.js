@@ -1,14 +1,8 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  compiler: {
-    styledComponents: true,
-  }
-};
+const path = require("path");
 
 module.exports = {
   generateBuildId: async () => {
-    // This could be anything, using the latest git hash
     return "1";
   },
+  distDir: "dist",
 };
-
