@@ -3,7 +3,7 @@ name: Test S3 Deploy
 on:
   push:
     branches:
-      - main
+      - master
   workflow_dispatch:
 permissions:
   id-token: write
