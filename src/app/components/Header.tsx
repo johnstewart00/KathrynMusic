@@ -1,7 +1,6 @@
 "use client";
 import { HeaderButton } from "./HeaderButton";
 import { useRouter } from "next/navigation";
-import { Paragraph } from "./Paragraph";
 export default function Header(props: any) {
   const router = useRouter();
   const onClick = (key: string = "") => {
