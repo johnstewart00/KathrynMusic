@@ -1,0 +1,65 @@
+{
+  "pages": {
+    "/layout": [
+      "static/chunks/webpack-3954b1942ca3fada.js",
+      "static/chunks/fd9d1056-9200b628bfbdc6da.js",
+      "static/chunks/596-98393ace57ba3968.js",
+      "static/chunks/main-app-15ae0204464a172b.js",
+      "static/css/de3f4e0645b96574.css",
+      "static/chunks/app/layout-b9303a2cc7eead06.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-3954b1942ca3fada.js",
+      "static/chunks/fd9d1056-9200b628bfbdc6da.js",
+      "static/chunks/596-98393ace57ba3968.js",
+      "static/chunks/main-app-15ae0204464a172b.js",
+      "static/css/de3f4e0645b96574.css",
+      "static/chunks/app/page-d0de8843052ef0d9.js"
+    ],
+    "/about/page": [
+      "static/chunks/webpack-3954b1942ca3fada.js",
+      "static/chunks/fd9d1056-9200b628bfbdc6da.js",
+      "static/chunks/596-98393ace57ba3968.js",
+      "static/chunks/main-app-15ae0204464a172b.js",
+      "static/chunks/702-7b3f8c4cedef10e9.js",
+      "static/chunks/app/about/page-fa2a610ed5ccfeec.js"
+    ],
+    "/contact/page": [
+      "static/chunks/webpack-3954b1942ca3fada.js",
+      "static/chunks/fd9d1056-9200b628bfbdc6da.js",
+      "static/chunks/596-98393ace57ba3968.js",
+      "static/chunks/main-app-15ae0204464a172b.js",
+      "static/chunks/app/contact/page-0069d3ec5eff92c4.js"
+    ],
+    "/media/page": [
+      "static/chunks/webpack-3954b1942ca3fada.js",
+      "static/chunks/fd9d1056-9200b628bfbdc6da.js",
+      "static/chunks/596-98393ace57ba3968.js",
+      "static/chunks/main-app-15ae0204464a172b.js",
+      "static/chunks/app/media/page-2c06fa984f5c6892.js"
+    ],
+    "/scheduleApp/page": [
+      "static/chunks/webpack-3954b1942ca3fada.js",
+      "static/chunks/fd9d1056-9200b628bfbdc6da.js",
+      "static/chunks/596-98393ace57ba3968.js",
+      "static/chunks/main-app-15ae0204464a172b.js",
+      "static/chunks/app/scheduleApp/page-098685ada8751c8a.js"
+    ],
+    "/resources/page": [
+      "static/chunks/webpack-3954b1942ca3fada.js",
+      "static/chunks/fd9d1056-9200b628bfbdc6da.js",
+      "static/chunks/596-98393ace57ba3968.js",
+      "static/chunks/main-app-15ae0204464a172b.js",
+      "static/chunks/app/resources/page-c47d731b4a516d6f.js"
+    ],
+    "/trivia/page": [
+      "static/chunks/webpack-3954b1942ca3fada.js",
+      "static/chunks/fd9d1056-9200b628bfbdc6da.js",
+      "static/chunks/596-98393ace57ba3968.js",
+      "static/chunks/main-app-15ae0204464a172b.js",
+      "static/chunks/7ce798d6-aa619a15f971b2c8.js",
+      "static/chunks/702-7b3f8c4cedef10e9.js",
+      "static/chunks/app/trivia/page-c1078d7711f71377.js"
+    ]
+  }
+}
