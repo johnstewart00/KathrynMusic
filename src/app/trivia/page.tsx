@@ -1,13 +1,9 @@
 "use client";
 
-import { MuiBox } from "../components/Box";
 import backgroundTriviaImage from "../../../public/TriviaGameBackground.jpeg";
 import Header from "../components/Header";
 import Image from "next/image";
-import { Paragraph } from "../components/Paragraph";
-import { Color } from "../styles/colors";
 import Spacer, { SpacerSizes } from "../components/Spacer";
-import { MuiButton } from "../components/Button";
 import { useEffect, useState } from "react";
 import $ from "jquery";
 
@@ -135,21 +131,19 @@ export default function Trivia() {
                 justifyContent: "center",
               }}
             >
-              <MuiBox color={Color.turquoiseGreen} width="300px">
-                <Paragraph>Welcome to the trivia game</Paragraph>
-              </MuiBox>
-              <MuiBox color={Color.turquoiseGreen} width="300px">
-                <Paragraph>
-                  Answer all 5 questions correctly to win big
-                </Paragraph>
-              </MuiBox>
+              <div>
+                <p>Welcome to the trivia game</p>
+              </div>
+              <div>
+                <p>Answer all 5 questions correctly to win big</p>
+              </div>
             </div>
             {started ? (
               activeQuestion === questions.length ? (
-                <MuiBox>
-                  <Paragraph>Results: {score}/5</Paragraph>
-                  <MuiButton onClick={restartGame}>Start</MuiButton>
-                </MuiBox>
+                <div>
+                  <p>Results: {score}/5</p>
+                  <button onClick={restartGame}>Start</button>
+                </div>
               ) : (
                 <div
                   style={{
@@ -166,43 +160,36 @@ export default function Trivia() {
                     }}
                   >
                     <Spacer size={SpacerSizes.small} />
-                    <MuiBox>
+                    <div>
                       <div style={{ display: "flex" }}>
-                        <Paragraph>Question {activeQuestion + 1}/5 </Paragraph>
+                        <p>Question {activeQuestion + 1}/5 </p>
                         <Spacer size={SpacerSizes.small} />
-                        <Paragraph>Score: {score}/5</Paragraph>
+                        <p>Score: {score}/5</p>
                       </div>
                       <h1>{questions[activeQuestion]}</h1>
-                    </MuiBox>
+                    </div>
                   </div>
                   <Spacer size={SpacerSizes.small} />
                   <div style={{ display: "flex", justifyContent: "center" }}>
                     {answers[activeQuestion]?.map(
                       (answer: any, index: number) => (
                         <div>
-                          <MuiButton
-                            background_color={
-                              selectedAnswerIndex === index
-                                ? Color.lightGrey
-                                : Color.white
-                            }
-                            onClick={() => answerClicked(answer, index)}
-                          >
+                          <button onClick={() => answerClicked(answer, index)}>
                             {answer}
-                          </MuiButton>
+                          </button>
                         </div>
                       )
                     )}
                   </div>
-                  <MuiButton onClick={nextQuestion}>
+                  <button onClick={nextQuestion}>
                     {activeQuestion === questions.length - 1
                       ? "Finish"
                       : "Next"}
-                  </MuiButton>
+                  </button>
                 </div>
               )
             ) : (
-              <MuiButton onClick={startGame}>Start</MuiButton>
+              <button onClick={startGame}>Start</button>
             )}
           </div>
         </div>

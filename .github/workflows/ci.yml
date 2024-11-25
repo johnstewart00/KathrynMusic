@@ -31,11 +31,11 @@ jobs:
         run: |
           npm ci && npm run build
 
-      - name: Update dist artifact
+      - name: Update next artifact
         uses: actions/upload-artifact@v4
         with:
           name: package
-          path: dist/
+          path: .next/
 
       - name: Run tests
         run: |
@@ -66,33 +66,13 @@ jobs:
           aws-region: us-east-1
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT }}:role/${{ secrets.CI_IAM_ROLE }}
 
-      - name: Download dist artifact
+      - name: Download next artifact
         uses: actions/download-artifact@v4
         with:
           name: package
-          path: dist/
+          path: .next/
 
       - name: Push to AWS S3
         run: |
           echo Deploying $version
-          aws s3 cp dist s3://${{ secrets.APP_BUCKET }}/$version --recursive
-          
-  release:
-    needs:
-      - build
-      - deploy
-    runs-on: ubuntu-latest
-    steps:
-      - name: Create Release
-        uses: ncipollo/release-action@v1
-        env:
-          version: ${{needs.build.outputs.version}}
-        with:
-          tag: version-${{ env.version }}
-          name: Version ${{ env.version }}
-          body: |
-            ## 🚀 Changes
-
-            ${{ github.event.head_commit.message }}
-
-            **commit**: ${{ github.sha }}
+          aws s3 cp .next s3://${{ secrets.APP_BUCKET }}/$version --recursive

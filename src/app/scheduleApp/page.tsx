@@ -2,10 +2,7 @@
 
 import { Color } from "../styles/colors";
 import Header from "../components/Header";
-import { MuiBox } from "../components/Box";
 import { useState } from "react";
-import { Paragraph } from "../components/Paragraph";
-import { MuiButton } from "../components/Button";
 
 export default function ScheduleApp() {
   // State to store form values
@@ -30,13 +27,11 @@ export default function ScheduleApp() {
       }}
     >
       <Header />
-      <MuiBox width="900px">
+      <div>
         <form onSubmit={handleSubmit}>
           <label>
             <div style={{ display: "flex", flexDirection: "row" }}>
-              <Paragraph marginRight="10px" textcolor={Color.black}>
-                First Name:{" "}
-              </Paragraph>
+              <p>First Name: </p>
               <input
                 type="text"
                 value={firstName}
@@ -47,9 +42,7 @@ export default function ScheduleApp() {
           <br />
           <label>
             <div style={{ display: "flex", flexDirection: "row" }}>
-              <Paragraph marginRight="10px" textcolor={Color.black}>
-                First Name:{" "}
-              </Paragraph>
+              <p>First Name: </p>
               <input
                 type="text"
                 value={lastName}
@@ -60,9 +53,7 @@ export default function ScheduleApp() {
           <br />
           <label>
             <div style={{ display: "flex", flexDirection: "row" }}>
-              <Paragraph marginRight="10px" textcolor={Color.black}>
-                Enter Days and Times that would work for your schedule:{" "}
-              </Paragraph>
+              <p>Enter Days and Times that would work for your schedule: </p>
               <input
                 type="text"
                 value={schedule}
@@ -71,11 +62,11 @@ export default function ScheduleApp() {
             </div>
           </label>
           <br />
-          <MuiButton background_color={Color.lightPurple}>
+          <div>
             <input type="submit" value="Submit" />
-          </MuiButton>
+          </div>
         </form>
-      </MuiBox>
+      </div>
     </div>
   );
 }
