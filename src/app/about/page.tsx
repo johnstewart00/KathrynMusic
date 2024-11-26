@@ -8,7 +8,7 @@ export default function About() {
       <Header />
       <div className="flex">
         <div className="bg-gray-100 p-10 m-10 w-1/2">
-          <div>Kathryn Stewart</div>
+          <div>Kathryn Gilbert</div>
           <div>
             Kathryn is an expert pianist with over 15 years of teaching
             experience. Although she may lack an incredible amount of

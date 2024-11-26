@@ -22,7 +22,7 @@ export default function Home() {
           <div className="md:flex md:justify-between items-center">
             {/* Left: Name and tagline */}
             <div className="md:flex-1 pr-10">
-              <div className="md:text-9xl text-5xl">Kathryn Stewart</div>
+              <div className="md:text-9xl text-5xl">Kathryn Gilbert</div>
               <div className="text-lg my-9">
                 Life is better with an appreciation for the arts
               </div>
@@ -41,7 +41,7 @@ export default function Home() {
         {/* CTA Button */}
         <div className="flex items-center justify-center">
           <div
-            className="bg-gray-100 m-0 p-10 w-max rounded-lg shadow-md hover:bg-gray-200"
+            className="bg-gray-100 p-10 w-max rounded-lg shadow-md hover:bg-gray-200"
             onClick={() => handleScheduleApp()}
           >
             Schedule Piano Lessons Here
