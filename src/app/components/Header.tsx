@@ -8,7 +8,7 @@ export default function Header(props: any) {
     return router.push(`/${key}`);
   };
   return (
-    <div className="bg-gray-100 p-4 h-1/8">
+    <div className="bg-gray-100 md:p-4 md:h-1/8 h-min overflow-x-auto">
       <HeaderButton onClick={() => onClick()}>
         <div className="text-black">Home</div>
       </HeaderButton>
