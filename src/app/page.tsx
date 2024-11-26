@@ -29,7 +29,7 @@ export default function Home() {
             </div>
 
             {/* Right: Quote */}
-            <div className="bg-white p-4 shadow-md rounded-lg md:w-1/3 w-max text-center">
+            <div className="bg-white p-4 shadow-md rounded-lg md:w-1/3 w-80 text-center">
               <div className="text-sm italic">
                 “A piano is a beautiful mechanism, but it’s also a magical one.”
               </div>
