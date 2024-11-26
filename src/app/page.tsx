@@ -18,7 +18,7 @@ export default function Home() {
 
       {/* Main Content */}
       <div className="flex-grow">
-        <div className="bg-gray-100 ml-10 my-16 p-10 rounded-md">
+        <div className="bg-gray-100 md:ml-10 mx-2 m-8 md:my-16 p-5 md:p-10 rounded-md">
           <div className="md:flex md:justify-between items-center">
             {/* Left: Name and tagline */}
             <div className="md:flex-1 pr-10">
