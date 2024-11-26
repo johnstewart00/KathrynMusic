@@ -17,7 +17,7 @@ export default function Home() {
       <Header />
 
       {/* Main Content */}
-      <div className="flex-grow overflow-y-auto">
+      <div className="flex-grow">
         <div className="bg-gray-100 md:ml-10 mx-2 m-8 md:my-16 p-5 md:p-10 rounded-md">
           <div className="md:flex md:justify-between items-center">
             {/* Left: Name and tagline */}
