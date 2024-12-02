@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Header from "../components/Header";
+import { GoDash } from "react-icons/go";
 
 interface Availability {
   day: string;
@@ -102,22 +103,46 @@ export default function ScheduleApp() {
                 </option>
               ))}
             </select>
-            <input
-              type="time"
-              className="p-2 rounded-lg border border-gray-300 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              value={availability.startTime}
-              onChange={(e) =>
-                updateAvailability(index, "startTime", e.target.value)
-              }
-            />
-            <input
-              type="time"
-              className="p-2 rounded-lg border border-gray-300 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              value={availability.endTime}
-              onChange={(e) =>
-                updateAvailability(index, "endTime", e.target.value)
-              }
-            />
+            <div className="flex flex-row items-center">
+              <div className="flex flex-col mx-2">
+                <label
+                  htmlFor={`startTime-${index}`}
+                  className="text-gray-700 text-sm mb-1"
+                >
+                  Start Time
+                </label>
+                <input
+                  id={`startTime-${index}`}
+                  type="time"
+                  className="p-2 rounded-lg border border-gray-300 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  value={availability.startTime}
+                  onChange={(e) =>
+                    updateAvailability(index, "startTime", e.target.value)
+                  }
+                />
+              </div>
+
+              <GoDash className="mt-5 text-gray-700 text-lg" />
+
+              <div className="flex flex-col mx-2">
+                <label
+                  htmlFor={`endTime-${index}`}
+                  className="text-gray-700 text-sm mb-1"
+                >
+                  End Time
+                </label>
+                <input
+                  id={`endTime-${index}`}
+                  type="time"
+                  className="p-2 rounded-lg border border-gray-300 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  value={availability.endTime}
+                  onChange={(e) =>
+                    updateAvailability(index, "endTime", e.target.value)
+                  }
+                />
+              </div>
+            </div>
+
             <button
               className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600"
               onClick={() => removeAvailability(index)}
