@@ -12,11 +12,12 @@ export default function About() {
         <div className="bg-gray-100 p-10 m-10 md:w-1/2 md:h-min">
           <div>
             Kathryn is an expert pianist with over 15 years of teaching
-            experience. Although she may lack an incredible amount of
-            intelligence, she sure knows how to make music sound good. It truly
-            is incredible to see her make it this far. She will probably be
-            really mad when she reads this. Also, we are all hoping that her and
-            her husband, Robby, have more kids and more dogs. Go DiamondBacks.
+            experience. She graduated with a degree in piano education from
+            Brigham Young University Idaho, and went on to achieve her masters
+            from Arizona State University. With her expertise and experience
+            teaching, she will help any ambitious student achieve their musical
+            goals. Prices per lesson will vary. Contact Kathryn for more
+            information.
           </div>
         </div>
         <div className="p-10">
