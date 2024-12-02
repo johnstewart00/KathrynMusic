@@ -1,9 +1,146 @@
-// pages/scheduleApp.js
+"use client";
+
+import { useState } from "react";
+import Header from "../components/Header";
+
+interface Availability {
+  day: string;
+  startTime: string;
+  endTime: string;
+}
+
 export default function ScheduleApp() {
+  const [schedule, setSchedule] = useState<Availability[]>([]);
+  const days: string[] = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+  ];
+
+  const addAvailability = () => {
+    setSchedule([...schedule, { day: "", startTime: "", endTime: "" }]);
+  };
+
+  const updateAvailability = (
+    index: number,
+    field: keyof Availability,
+    value: string
+  ) => {
+    const updatedSchedule = [...schedule];
+    updatedSchedule[index][field] = value;
+    setSchedule(updatedSchedule);
+  };
+
+  const removeAvailability = (index: number) => {
+    setSchedule(schedule.filter((_, i) => i !== index));
+  };
+
+  const handleSubmit = () => {
+    console.log("User Schedule:", schedule);
+    // send email to Kathryn with new user information
+  };
+
   return (
     <div>
-      <h1>Schedule Piano Lessons</h1>
-      <p>Use this page to schedule your piano lessons.</p>
+      <Header />
+      <h1 className="text-center text-5xl p-8">Schedule Piano Lessons</h1>
+      <p className="mx-4 text-xl">Enter your Name and Phone Number.</p>
+      <form className="bg-gray-100 p-4 mx-4 my-4 rounded-lg">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+          {/* Name Field */}
+          <div className="flex flex-col md:flex-row md:items-center">
+            <label
+              htmlFor="name"
+              className="text-gray-700 md:mr-4 mb-1 md:mb-0"
+            >
+              Name:
+            </label>
+            <input
+              id="name"
+              className="flex-grow p-2 rounded-lg border border-gray-300 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              type="text"
+            />
+          </div>
+
+          {/* Phone Number Field */}
+          <div className="flex flex-col md:flex-row md:items-center">
+            <label
+              htmlFor="phone"
+              className="text-gray-700 md:mr-4 mb-1 md:mb-0"
+            >
+              Phone Number:
+            </label>
+            <input
+              id="phone"
+              className="flex-grow p-2 rounded-lg border border-gray-300 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              type="text"
+            />
+          </div>
+        </div>
+      </form>
+
+      <p className="mx-4 text-xl">
+        Select a time(s) that you would be available for a piano lesson.
+      </p>
+      <div className="p-4 space-y-4">
+        {schedule.map((availability, index) => (
+          <div
+            key={index}
+            className="flex flex-col md:flex-row md:items-center md:space-x-4 space-y-4 md:space-y-0 bg-gray-100 p-4 rounded-lg"
+          >
+            <select
+              className="p-2 rounded-lg border border-gray-300 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              value={availability.day}
+              onChange={(e) => updateAvailability(index, "day", e.target.value)}
+            >
+              <option value="">Select Day</option>
+              {days.map((day) => (
+                <option key={day} value={day}>
+                  {day}
+                </option>
+              ))}
+            </select>
+            <input
+              type="time"
+              className="p-2 rounded-lg border border-gray-300 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              value={availability.startTime}
+              onChange={(e) =>
+                updateAvailability(index, "startTime", e.target.value)
+              }
+            />
+            <input
+              type="time"
+              className="p-2 rounded-lg border border-gray-300 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              value={availability.endTime}
+              onChange={(e) =>
+                updateAvailability(index, "endTime", e.target.value)
+              }
+            />
+            <button
+              className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600"
+              onClick={() => removeAvailability(index)}
+            >
+              Remove
+            </button>
+          </div>
+        ))}
+      </div>
+      <div className="flex justify-center space-x-4">
+        <button
+          className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+          onClick={addAvailability}
+        >
+          Add Availability
+        </button>
+        <button
+          className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600"
+          onClick={handleSubmit}
+        >
+          Submit
+        </button>
+      </div>
     </div>
   );
 }

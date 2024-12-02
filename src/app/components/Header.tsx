@@ -16,7 +16,7 @@ export default function Header(props: any) {
       <HeaderButton onClick={() => onClick("about")}>
         <div className="text-black">About</div>
       </HeaderButton>
-      <HeaderButton onClick={() => onClick("media")}>
+      {/* <HeaderButton onClick={() => onClick("media")}>
         <div className="text-black">Media</div>
       </HeaderButton>
       <HeaderButton onClick={() => onClick("contact")}>
@@ -27,7 +27,7 @@ export default function Header(props: any) {
       </HeaderButton>
       <HeaderButton onClick={() => onClick("trivia")}>
         <div className="text-black">Trivia Game</div>
-      </HeaderButton>
+      </HeaderButton> */}
     </div>
   );
 }

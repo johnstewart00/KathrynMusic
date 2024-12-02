@@ -24,7 +24,7 @@ export default function Home() {
             <div className="md:flex-1 pr-10">
               <div className="md:text-9xl text-5xl">Kathryn Gilbert</div>
               <div className="text-lg my-9">
-                Life is better with an appreciation for the arts
+                Located in Phoenix, AZ. Masters in Piano Education
               </div>
             </div>
 
@@ -37,18 +37,22 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div className="mx-4 mb-4">
+          Kathryn Gilbert is an accomplished piano teacher in Phoenix, AZ. With
+          an impressive resume, including a masters Arizona State University,
+          she has helped many students reach their musical goals.
+        </div>
 
         <div className="flex items-center justify-center">
           <div
-            className="bg-gray-100 p-10 w-max rounded-lg shadow-md hover:bg-gray-200"
+            className="bg-gray-100 p-10 w-max rounded-lg shadow-md hover:bg-gray-300"
             onClick={() => handleScheduleApp()}
           >
             Schedule Piano Lessons Here
           </div>
         </div>
       </div>
-
-      <Footer />
+      <Footer sticky />
     </div>
   );
 }

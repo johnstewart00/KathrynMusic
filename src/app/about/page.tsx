@@ -1,14 +1,15 @@
 import KathrynImage from "../../../public/Kathryn.jpg";
 import Image from "next/image";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export default function About() {
   return (
     <div>
       <Header />
-      <div className="flex">
-        <div className="bg-gray-100 p-10 m-10 w-1/2">
-          <div>Kathryn Gilbert</div>
+      <div className="text-5xl text-center mt-8">Kathryn Gilbert</div>
+      <div className="md:flex">
+        <div className="bg-gray-100 p-10 m-10 md:w-1/2 md:h-min">
           <div>
             Kathryn is an expert pianist with over 15 years of teaching
             experience. Although she may lack an incredible amount of
@@ -22,6 +23,7 @@ export default function About() {
           <Image src={KathrynImage} alt="Grand Piano" width={450} />
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
