@@ -10,6 +10,8 @@ interface Availability {
   endTime: string;
 }
 
+const axios = require("axios");
+
 export default function ScheduleApp() {
   const [schedule, setSchedule] = useState<Availability[]>([]);
   const days: string[] = [
@@ -38,9 +40,45 @@ export default function ScheduleApp() {
     setSchedule(schedule.filter((_, i) => i !== index));
   };
 
+  const sendEmail = async (emailData: any) => {
+    const apiUrl =
+      "https://po4fhi3mpc.execute-api.us-east-1.amazonaws.com/prod/send-email";
+
+    try {
+      const response = await axios.post(apiUrl, emailData, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      console.log("Email sent successfully:", response.data);
+    } catch (error) {
+      console.error("Error sending email:", error);
+    }
+  };
+
   const handleSubmit = () => {
-    console.log("User Schedule:", schedule);
-    // send email to Kathryn with new user information
+    // Get the values from the form fields
+    const name = (document.getElementById("name") as HTMLInputElement).value;
+    const phone = (document.getElementById("phone") as HTMLInputElement).value;
+
+    // Validate the inputs
+    if (!name || !phone || schedule.length === 0) {
+      alert("Please fill in all fields and add at least one availability.");
+      return;
+    }
+
+    // Construct the object expected by the Lambda function
+    const userObject = {
+      name,
+      phone,
+      schedule,
+    };
+
+    // Log the user object for debugging
+    console.log("User Object:", userObject);
+
+    // Call the sendEmail function with the constructed object
+    sendEmail(userObject);
   };
 
   return (
