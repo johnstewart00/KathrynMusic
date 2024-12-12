@@ -42,7 +42,6 @@ export default function Home() {
           <div className="mx-4 mb-4 space-y-4">
             {[
               "Accomplished piano teacher in Phoenix, AZ",
-              "Masters degree from Arizona State University",
               "Over 10 years of teaching experience",
             ].map((item, index) => (
               <div key={index} className="flex items-start">
