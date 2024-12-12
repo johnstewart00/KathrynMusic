@@ -4,6 +4,7 @@ import "./styles/globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { useRouter } from "next/navigation";
+import { GoDotFill } from "react-icons/go";
 
 export default function Home() {
   const router = useRouter();
@@ -18,7 +19,7 @@ export default function Home() {
 
       {/* Main Content */}
       <div className="flex-grow">
-        <div className="bg-gray-100 md:ml-10 mx-2 m-8 md:my-16 p-5 md:p-10 rounded-md">
+        <div className="bg-gray-100 md:ml-10 mx-3 md:mt-16 mt-4 mb-4 p-5 md:p-10 rounded-md">
           <div className="md:flex md:justify-between items-center">
             {/* Left: Name and tagline */}
             <div className="md:flex-1 pr-10">
@@ -37,10 +38,19 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="mx-4 mb-4">
-          Kathryn Gilbert is an accomplished piano teacher in Phoenix, AZ. With
-          an impressive resume, including a masters Arizona State University,
-          she has helped many students reach their musical goals.
+        <div className="flex justify-center md:mb-8 mb-4">
+          <div className="mx-4 mb-4 space-y-4">
+            {[
+              "Accomplished piano teacher in Phoenix, AZ",
+              "Masters degree from Arizona State University",
+              "Over 10 years of teaching experience",
+            ].map((item, index) => (
+              <div key={index} className="flex items-start">
+                <GoDotFill className="mt-1" />
+                <div className="ml-4">{item}</div>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="flex items-center justify-center">

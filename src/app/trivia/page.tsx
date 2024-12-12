@@ -99,9 +99,9 @@ export default function Trivia() {
   };
   return (
     <div>
-      <div>
-        <Header />
-        <div className="flex flex-col bg-gray-100 mt-4 w-1/2 mx-auto p-4">
+      <Header />
+      <div className="flex justify-center">
+        <div className="flex flex-col bg-gray-100 mt-4 md:w-1/2 mx-4 p-4">
           <div className="flex flex-col items-center justify-center">
             <div className="text-3xl py-4">Welcome to the trivia game!</div>
             <div>Answer all 5 questions correctly to win big</div>
@@ -133,7 +133,7 @@ export default function Trivia() {
                   </div>
                 </div>
 
-                <div className="flex justify-center">
+                <div className="flex md:flex-row flex-col justify-center">
                   {answers[activeQuestion]?.map(
                     (answer: any, index: number) => (
                       <div
@@ -142,7 +142,7 @@ export default function Trivia() {
                           selectedAnswerIndex === index
                             ? "bg-secondary text-white"
                             : "bg-primary text-white hover:bg-secondary"
-                        } rounded-md px-4 py-2 mx-4`}
+                        } rounded-md px-4 py-2 md:mx-4 md:my-0 my-2`}
                         onClick={() => answerClicked(answer, index)}
                       >
                         {answer}

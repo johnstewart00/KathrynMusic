@@ -3,9 +3,11 @@ import { ReactNode } from "react";
 
 export const HeaderButton = ({
   onClick,
+
   children,
 }: {
   onClick: () => void;
+
   children: ReactNode;
 }) => {
   return (

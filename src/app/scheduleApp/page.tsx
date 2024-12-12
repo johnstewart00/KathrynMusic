@@ -182,7 +182,7 @@ export default function ScheduleApp() {
             </div>
 
             <button
-              className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600"
+              className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary"
               onClick={() => removeAvailability(index)}
             >
               Remove
@@ -192,13 +192,13 @@ export default function ScheduleApp() {
       </div>
       <div className="flex justify-center space-x-4 mb-4">
         <button
-          className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+          className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary"
           onClick={addAvailability}
         >
           Add Availability
         </button>
         <button
-          className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600"
+          className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary"
           onClick={handleSubmit}
         >
           Submit
