@@ -22,7 +22,7 @@ export default function Home() {
           <div className="md:flex md:justify-between items-center">
             {/* Left: Name and tagline */}
             <div className="md:flex-1 pr-10">
-              <div className="md:text-9xl text-5xl">Kathryn Gilbert</div>
+              <div className="md:text-8xl text-5xl">Kathryn Gilbert</div>
               <div className="text-lg my-9">
                 Located in Phoenix, AZ. Masters in Piano Education
               </div>
@@ -45,7 +45,7 @@ export default function Home() {
 
         <div className="flex items-center justify-center">
           <div
-            className="bg-gray-100 p-10 w-max rounded-lg shadow-md hover:bg-gray-300"
+            className="bg-primary text-white p-10 w-max rounded-lg shadow-md hover:bg-secondary"
             onClick={() => handleScheduleApp()}
           >
             Schedule Piano Lessons Here

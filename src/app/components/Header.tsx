@@ -9,13 +9,9 @@ export default function Header(props: any) {
   };
   return (
     <div className="bg-gray-100 overflow-x-auto flex whitespace-nowrap">
-      <HeaderButton onClick={() => onClick()}>
-        <div className="text-black">Home</div>
-      </HeaderButton>
+      <HeaderButton onClick={() => onClick()}>Home</HeaderButton>
 
-      <HeaderButton onClick={() => onClick("about")}>
-        <div className="text-black">About</div>
-      </HeaderButton>
+      <HeaderButton onClick={() => onClick("about")}>About</HeaderButton>
       {/* <HeaderButton onClick={() => onClick("media")}>
         <div className="text-black">Media</div>
       </HeaderButton>
@@ -24,10 +20,8 @@ export default function Header(props: any) {
       </HeaderButton>
       <HeaderButton onClick={() => onClick("resources")}>
         <div className="text-black">Resources</div>
-      </HeaderButton>
-      <HeaderButton onClick={() => onClick("trivia")}>
-        <div className="text-black">Trivia Game</div>
-      </HeaderButton> */}
+  </HeaderButton> */}
+      <HeaderButton onClick={() => onClick("trivia")}>Trivia Game</HeaderButton>
     </div>
   );
 }

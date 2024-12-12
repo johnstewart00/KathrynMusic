@@ -1,9 +1,6 @@
 "use client";
 
-import backgroundTriviaImage from "../../../public/TriviaGameBackground.jpeg";
 import Header from "../components/Header";
-import Image from "next/image";
-import Spacer, { SpacerSizes } from "../components/Spacer";
 import { useEffect, useState } from "react";
 import $ from "jquery";
 
@@ -102,96 +99,79 @@ export default function Trivia() {
   };
   return (
     <div>
-      {/* Image */}
-      <div style={{ position: "absolute", width: "100%", height: "100vh" }}>
-        <Image
-          src={backgroundTriviaImage}
-          alt="backgroundTriviaImage"
-          layout="fill"
-          objectFit="cover"
-          quality={100}
-        />
-        <div
-          style={{
-            position: "absolute",
-            width: "100%",
-          }}
-        >
-          <Header />
-          <Spacer size={SpacerSizes.small} />
-          <div
-            style={{
-              display: "grid",
-              justifyContent: "center",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <div>
-                <p>Welcome to the trivia game</p>
-              </div>
-              <div>
-                <p>Answer all 5 questions correctly to win big</p>
-              </div>
-            </div>
-            {started ? (
-              activeQuestion === questions.length ? (
-                <div>
-                  <p>Results: {score}/5</p>
-                  <button onClick={restartGame}>Start</button>
-                </div>
-              ) : (
+      <div>
+        <Header />
+        <div className="flex flex-col bg-gray-100 mt-4 w-1/2 mx-auto p-4">
+          <div className="flex flex-col items-center justify-center">
+            <div className="text-3xl py-4">Welcome to the trivia game!</div>
+            <div>Answer all 5 questions correctly to win big</div>
+          </div>
+          <hr className="border-t-2 border-gray-300 my-6" />
+          {started ? (
+            activeQuestion === questions.length ? (
+              <div className="flex flex-col items-center justify-center">
+                <p>Results: {score}/5</p>
                 <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                  }}
+                  className="bg-primary text-white hover:bg-secondary w-min px-4 py-2 mt-4 rounded-md"
+                  onClick={restartGame}
                 >
-                  <div
-                    style={{
-                      display: "grid",
-                      justifyContent: "center",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Spacer size={SpacerSizes.small} />
-                    <div>
-                      <div style={{ display: "flex" }}>
-                        <p>Question {activeQuestion + 1}/5 </p>
-                        <Spacer size={SpacerSizes.small} />
-                        <p>Score: {score}/5</p>
+                  Start
+                </div>
+              </div>
+            ) : (
+              <div className="flex flex-col">
+                <div className="my-2">
+                  <div>
+                    <div className="flex">
+                      <div className="mr-8">
+                        Question {activeQuestion + 1}/5{" "}
                       </div>
-                      <h1>{questions[activeQuestion]}</h1>
+
+                      <div>Score: {score}/5</div>
                     </div>
+                    <div className="mt-6 mb-4">{questions[activeQuestion]}</div>
                   </div>
-                  <Spacer size={SpacerSizes.small} />
-                  <div style={{ display: "flex", justifyContent: "center" }}>
-                    {answers[activeQuestion]?.map(
-                      (answer: any, index: number) => (
-                        <div>
-                          <button onClick={() => answerClicked(answer, index)}>
-                            {answer}
-                          </button>
-                        </div>
-                      )
-                    )}
-                  </div>
-                  <button onClick={nextQuestion}>
+                </div>
+
+                <div className="flex justify-center">
+                  {answers[activeQuestion]?.map(
+                    (answer: any, index: number) => (
+                      <div
+                        key={index}
+                        className={`${
+                          selectedAnswerIndex === index
+                            ? "bg-secondary text-white"
+                            : "bg-primary text-white hover:bg-secondary"
+                        } rounded-md px-4 py-2 mx-4`}
+                        onClick={() => answerClicked(answer, index)}
+                      >
+                        {answer}
+                      </div>
+                    )
+                  )}
+                </div>
+                <div className="flex justify-center">
+                  <div
+                    className="bg-primary text-white hover:bg-secondary mt-12 px-4 py-2 rounded-md mb-4"
+                    onClick={nextQuestion}
+                  >
                     {activeQuestion === questions.length - 1
                       ? "Finish"
                       : "Next"}
-                  </button>
+                  </div>
                 </div>
-              )
-            ) : (
-              <button onClick={startGame}>Start</button>
-            )}
-          </div>
+              </div>
+            )
+          ) : (
+            <div className="flex justify-center mt-4">
+              <div
+                className="bg-primary text-white p-4 rounded-lg shadow-md hover:bg-secondary"
+                onClick={startGame}
+              >
+                Start
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

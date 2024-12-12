@@ -190,7 +190,7 @@ export default function ScheduleApp() {
           </div>
         ))}
       </div>
-      <div className="flex justify-center space-x-4">
+      <div className="flex justify-center space-x-4 mb-4">
         <button
           className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
           onClick={addAvailability}

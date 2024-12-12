@@ -10,7 +10,7 @@ export const HeaderButton = ({
 }) => {
   return (
     <button
-      className="px-3 py-3 hover:bg-gray-200 active:bg-gray-400"
+      className="px-3 py-3 hover:bg-gray-200 active:bg-gray-400 hover:text-primary"
       onClick={onClick}
     >
       {children}
