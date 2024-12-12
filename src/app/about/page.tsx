@@ -18,9 +18,9 @@ export default function About() {
             goals. Prices per lesson will vary. Contact Kathryn for more
             information.
           </div>
-          <div className="mt-10">
+          <div className="flex justify-center mt-10">
             <iframe
-              width="560"
+              width="100%"
               height="315"
               src="https://www.youtube.com/embed/kyH90OSJzTY?start=344&end=610"
               title="YouTube video player"
