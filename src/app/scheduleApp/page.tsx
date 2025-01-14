@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Header from "../components/Header";
 import { GoDash } from "react-icons/go";
+import { FaCheck } from "react-icons/fa6";
 
 interface Availability {
   day: string;
@@ -14,6 +15,7 @@ const axios = require("axios");
 
 export default function ScheduleApp() {
   const [schedule, setSchedule] = useState<Availability[]>([]);
+  const [showConfirmation, setShowConfirmation] = useState(false);
   const days: string[] = [
     "Monday",
     "Tuesday",
@@ -79,6 +81,7 @@ export default function ScheduleApp() {
 
     // Call the sendEmail function with the constructed object
     sendEmail(userObject);
+    setShowConfirmation(true);
   };
 
   return (
@@ -127,10 +130,10 @@ export default function ScheduleApp() {
         {schedule.map((availability, index) => (
           <div
             key={index}
-            className="flex flex-col md:flex-row md:items-center md:space-x-4 space-y-4 md:space-y-0 bg-gray-100 p-4 rounded-lg"
+            className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 bg-gray-100 p-4 rounded-lg"
           >
             <select
-              className="p-2 rounded-lg border border-gray-300 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="h-min mt-7 rounded-lg border border-gray-300 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
               value={availability.day}
               onChange={(e) => updateAvailability(index, "day", e.target.value)}
             >
@@ -182,7 +185,7 @@ export default function ScheduleApp() {
             </div>
 
             <button
-              className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary"
+              className="bg-primary h-min text-white px-4 py-2 mt-9 rounded-lg hover:bg-secondary"
               onClick={() => removeAvailability(index)}
             >
               Remove
@@ -203,6 +206,45 @@ export default function ScheduleApp() {
         >
           Submit
         </button>
+        {showConfirmation && (
+          <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+            <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+              <div className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                <div className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                  <div className="sm:flex sm:items-start">
+                    <div className="mx-auto flex size-12 shrink-0 items-center justify-center rounded-full bg-green-100 sm:mx-0 sm:size-10">
+                      <FaCheck />
+                    </div>
+                    <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                      <h3
+                        className="text-base font-semibold text-gray-900"
+                        id="modal-title"
+                      >
+                        Submission Success
+                      </h3>
+                      <div className="mt-2">
+                        <p className="text-sm text-gray-500">
+                          Your preference has been submitted successfully. I
+                          will get back to you within a few days to confirm your
+                          availability and find a time that works best.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                  <button
+                    type="button"
+                    className="mt-3 text-white inline-flex w-full justify-center rounded-md bg-primary px-3 py-2 text-sm font-semibold shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-secondary sm:mt-0 sm:w-auto"
+                    onClick={() => setShowConfirmation(false)}
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

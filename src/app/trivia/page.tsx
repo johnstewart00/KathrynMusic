@@ -101,7 +101,7 @@ export default function Trivia() {
     <div>
       <Header />
       <div className="flex justify-center">
-        <div className="flex flex-col bg-gray-100 mt-4 md:w-1/2 mx-4 p-4">
+        <div className="flex flex-col bg-gray-100 mt-4 md:w-3/4 mx-4 p-4">
           <div className="flex flex-col items-center justify-center">
             <div className="text-3xl py-4">Welcome to the trivia game!</div>
             <div>Answer all 5 questions correctly to win big</div>
@@ -120,17 +120,13 @@ export default function Trivia() {
               </div>
             ) : (
               <div className="flex flex-col">
-                <div className="my-2">
-                  <div>
-                    <div className="flex">
-                      <div className="mr-8">
-                        Question {activeQuestion + 1}/5{" "}
-                      </div>
+                <div className="md:mx-20">
+                  <div className="flex">
+                    <div className="mr-8">Question {activeQuestion + 1}/5 </div>
 
-                      <div>Score: {score}/5</div>
-                    </div>
-                    <div className="mt-6 mb-4">{questions[activeQuestion]}</div>
+                    <div>Score: {score}/5</div>
                   </div>
+                  <div className="mt-6 mb-8">{questions[activeQuestion]}</div>
                 </div>
 
                 <div className="flex md:flex-row flex-col justify-center">
