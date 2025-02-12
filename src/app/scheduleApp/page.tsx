@@ -4,6 +4,7 @@ import { useState } from "react";
 import Header from "../components/Header";
 import { GoDash } from "react-icons/go";
 import { FaCheck } from "react-icons/fa6";
+import { useRouter } from "next/navigation";
 
 interface Availability {
   day: string;
@@ -23,6 +24,7 @@ export default function ScheduleApp() {
     "Thursday",
     "Friday",
   ];
+  const router = useRouter();
 
   const addAvailability = () => {
     setSchedule([...schedule, { day: "", startTime: "", endTime: "" }]);
@@ -82,6 +84,11 @@ export default function ScheduleApp() {
     // Call the sendEmail function with the constructed object
     sendEmail(userObject);
     setShowConfirmation(true);
+  };
+
+  const handleClose = () => {
+    setShowConfirmation(false);
+    return router.push(`/`);
   };
 
   return (
@@ -236,7 +243,7 @@ export default function ScheduleApp() {
                   <button
                     type="button"
                     className="mt-3 text-white inline-flex w-full justify-center rounded-md bg-primary px-3 py-2 text-sm font-semibold shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-secondary sm:mt-0 sm:w-auto"
-                    onClick={() => setShowConfirmation(false)}
+                    onClick={handleClose}
                   >
                     Close
                   </button>
