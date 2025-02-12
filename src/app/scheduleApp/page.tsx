@@ -4,7 +4,6 @@ import { useState } from "react";
 import Header from "../components/Header";
 import { GoDash } from "react-icons/go";
 import { FaCheck } from "react-icons/fa6";
-import { useRouter } from "next/navigation";
 
 interface Availability {
   day: string;
@@ -24,7 +23,6 @@ export default function ScheduleApp() {
     "Thursday",
     "Friday",
   ];
-  const router = useRouter();
 
   const addAvailability = () => {
     setSchedule([...schedule, { day: "", startTime: "", endTime: "" }]);
@@ -88,7 +86,7 @@ export default function ScheduleApp() {
 
   const handleClose = () => {
     setShowConfirmation(false);
-    router.push(`/`);
+    setSchedule([]);
   };
 
   return (
