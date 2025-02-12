@@ -88,7 +88,7 @@ export default function ScheduleApp() {
 
   const handleClose = () => {
     setShowConfirmation(false);
-    return router.push(`/`);
+    router.push(`/`);
   };
 
   return (
