@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Header from "../components/Header";
 import { GoDash } from "react-icons/go";
 import { FaCheck } from "react-icons/fa6";
 
@@ -86,7 +85,6 @@ export default function ScheduleApp() {
 
   return (
     <div>
-      <Header />
       <h1 className="text-center text-5xl p-8">Schedule Piano Lessons</h1>
       <p className="mx-4 text-xl">Enter your Name and Phone Number.</p>
       <form className="bg-gray-100 p-4 mx-4 my-4 rounded-lg">

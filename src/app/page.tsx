@@ -1,26 +1,16 @@
 "use client";
 
 import "./styles/globals.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import { useRouter } from "next/navigation";
 import { GoDotFill } from "react-icons/go";
+import Link from "next/link";
 
 export default function Home() {
-  const router = useRouter();
-
-  const handleScheduleApp = () => {
-    console.log("Clicked!!");
-    return router.push(`/scheduleApp`);
-  };
   return (
     <div className="bg-white-100 flex flex-col w-screen h-screen">
-      <Header />
-
       {/* Main Content */}
       <div className="flex-grow">
         <div className="bg-gray-100 md:ml-10 mx-3 md:mt-16 mt-4 mb-4 p-5 md:p-10 rounded-md">
-          <div className="md:flex md:justify-between items-center">
+          <div className="md:flex md:justify-between items-center mr-4">
             {/* Left: Name and tagline */}
             <div className="md:flex-1 pr-10">
               <div className="md:text-8xl text-5xl">Kathryn Gilbert</div>
@@ -30,7 +20,7 @@ export default function Home() {
             </div>
 
             {/* Right: Quote */}
-            <div className="bg-white p-4 shadow-md rounded-lg md:w-1/3 w-80 text-center">
+            <div className="bg-white p-4 shadow-md rounded-lg md:w-1/3 w-80 text-center mr-10">
               <div className="text-sm italic">
                 “A piano is a beautiful mechanism, but it’s also a magical one.”
               </div>
@@ -53,15 +43,14 @@ export default function Home() {
         </div>
 
         <div className="flex items-center justify-center">
-          <div
+          <Link
             className="bg-primary text-white p-10 w-max rounded-lg shadow-md hover:bg-secondary"
-            onClick={() => handleScheduleApp()}
+            href="/scheduleApp"
           >
             Schedule Piano Lessons Here
-          </div>
+          </Link>
         </div>
       </div>
-      <Footer sticky />
     </div>
   );
 }

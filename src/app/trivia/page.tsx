@@ -99,7 +99,6 @@ export default function Trivia() {
   };
   return (
     <div>
-      <Header />
       <div className="flex justify-center">
         <div className="flex flex-col bg-gray-100 mt-4 md:w-3/4 mx-4 p-4">
           <div className="flex flex-col items-center justify-center">

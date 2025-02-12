@@ -1,22 +1,22 @@
 "use client";
+import Link from "next/link";
 import { ReactNode } from "react";
 
 export const HeaderButton = ({
-  onClick,
-
+  href,
   children,
 }: {
-  onClick: () => void;
+  href: string;
 
-  children: ReactNode;
+  children: string;
 }) => {
   return (
-    <button
+    <Link
       className="px-3 py-3 hover:bg-gray-200 active:bg-gray-400 hover:text-primary"
-      onClick={onClick}
+      href={href}
     >
       {children}
-    </button>
+    </Link>
   );
 };
 
