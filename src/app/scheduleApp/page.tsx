@@ -84,11 +84,6 @@ export default function ScheduleApp() {
     setShowConfirmation(true);
   };
 
-  const handleClose = () => {
-    setShowConfirmation(false);
-    setSchedule([]);
-  };
-
   return (
     <div>
       <Header />
@@ -241,7 +236,7 @@ export default function ScheduleApp() {
                   <button
                     type="button"
                     className="mt-3 text-white inline-flex w-full justify-center rounded-md bg-primary px-3 py-2 text-sm font-semibold shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-secondary sm:mt-0 sm:w-auto"
-                    onClick={handleClose}
+                    onClick={() => setShowConfirmation(false)}
                   >
                     Close
                   </button>
