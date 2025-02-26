@@ -9,7 +9,3 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed; /* Prevents scrolling issues */
 }
-html, body {
-  height: 100%;
-  overflow: hidden; /* Prevents unnecessary scrolling */
-}
