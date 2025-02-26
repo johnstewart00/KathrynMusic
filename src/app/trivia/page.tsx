@@ -99,7 +99,7 @@ export default function Trivia() {
   return (
     <div>
       <div className="flex justify-center">
-        <div className="flex flex-col bg-primary mt-4 md:w-3/4 mx-4 p-4">
+        <div className="flex flex-col bg-primary mt-4 md:w-3/4 mx-4 p-4 rounded-md shadow-lg">
           <div className="flex flex-col items-center justify-center">
             <div className="text-3xl py-4">Welcome to the trivia game!</div>
             <div>Answer all 5 questions correctly to win big</div>
