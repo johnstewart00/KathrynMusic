@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#006FFD', // Define the primary color for text
+        primary: '#FFFFFA', // Define the primary color for text
         secondary: '#0057C7',
         danger: '#e3342f',
       },

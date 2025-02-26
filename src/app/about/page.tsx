@@ -6,7 +6,7 @@ export default function About() {
     <div>
       <div className="text-5xl text-center mt-8">Kathryn Gilbert</div>
       <div className="md:flex">
-        <div className="bg-gray-100 p-10 m-10 md:w-1/2 md:h-min">
+        <div className="bg-primary p-10 m-10 md:w-1/2 md:h-min">
           <div>
             Kathryn is an expert pianist with over 15 years of teaching
             experience. She graduated with a degree in piano education from

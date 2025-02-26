@@ -1,5 +1,6 @@
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import Page from "./components/image";
 import "./styles/globals.css";
 import type { Metadata } from "next";
 
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
     siteName: "Kathryn Gilbert",
     images: [
       {
-        url: "../../public/grandPiano.png",
+        url: "/grandPiano.png", // Fix the public path
         width: 1200,
         height: 630,
         alt: "A beautiful grand piano",
@@ -33,6 +34,7 @@ export default function RootLayout({
           <main className="flex-grow container mx-auto px-4 py-8">
             {children}
           </main>
+          <Page />
           <Footer sticky />
         </div>
       </body>

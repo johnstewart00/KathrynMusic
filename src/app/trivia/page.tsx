@@ -1,6 +1,5 @@
 "use client";
 
-import Header from "../components/Header";
 import { useEffect, useState } from "react";
 import $ from "jquery";
 
@@ -100,7 +99,7 @@ export default function Trivia() {
   return (
     <div>
       <div className="flex justify-center">
-        <div className="flex flex-col bg-gray-100 mt-4 md:w-3/4 mx-4 p-4">
+        <div className="flex flex-col bg-primary mt-4 md:w-3/4 mx-4 p-4">
           <div className="flex flex-col items-center justify-center">
             <div className="text-3xl py-4">Welcome to the trivia game!</div>
             <div>Answer all 5 questions correctly to win big</div>
@@ -111,7 +110,7 @@ export default function Trivia() {
               <div className="flex flex-col items-center justify-center">
                 <p>Results: {score}/5</p>
                 <div
-                  className="bg-primary text-white hover:bg-secondary w-min px-4 py-2 mt-4 rounded-md"
+                  className="bg-secondary text-white hover:bg-blue-800 w-min px-4 py-2 mt-4 rounded-md"
                   onClick={restartGame}
                 >
                   Start
@@ -135,8 +134,8 @@ export default function Trivia() {
                         key={index}
                         className={`${
                           selectedAnswerIndex === index
-                            ? "bg-secondary text-white"
-                            : "bg-primary text-white hover:bg-secondary"
+                            ? "bg-blue-500 text-white"
+                            : "bg-secondary text-white hover:bg-blue-800"
                         } rounded-md px-4 py-2 md:mx-4 md:my-0 my-2`}
                         onClick={() => answerClicked(answer, index)}
                       >
@@ -147,7 +146,7 @@ export default function Trivia() {
                 </div>
                 <div className="flex justify-center">
                   <div
-                    className="bg-primary text-white hover:bg-secondary mt-12 px-4 py-2 rounded-md mb-4"
+                    className="bg-secondary text-white hover:bg-blue-800 mt-12 px-4 py-2 rounded-md mb-4"
                     onClick={nextQuestion}
                   >
                     {activeQuestion === questions.length - 1
@@ -160,7 +159,7 @@ export default function Trivia() {
           ) : (
             <div className="flex justify-center mt-4">
               <div
-                className="bg-primary text-white p-4 rounded-lg shadow-md hover:bg-secondary"
+                className="bg-secondary text-white p-4 rounded-lg shadow-md hover:bg-blue-800"
                 onClick={startGame}
               >
                 Start
