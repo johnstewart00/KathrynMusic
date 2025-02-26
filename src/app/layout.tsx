@@ -1,6 +1,5 @@
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Page from "./components/image";
 import "./styles/globals.css";
 import type { Metadata } from "next";
 
@@ -34,7 +33,6 @@ export default function RootLayout({
           <main className="flex-grow container mx-auto px-4 py-8">
             {children}
           </main>
-          <Page />
           <Footer sticky />
         </div>
       </body>

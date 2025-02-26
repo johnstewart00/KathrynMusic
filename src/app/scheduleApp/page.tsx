@@ -128,7 +128,7 @@ export default function ScheduleApp() {
         {schedule.map((availability, index) => (
           <div
             key={index}
-            className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 bg-gray-100 p-4 rounded-lg"
+            className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 bg-gray-100 p-4 rounded-lg shadow-sm"
           >
             <select
               className="h-min mt-7 rounded-lg border border-gray-300 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -181,25 +181,26 @@ export default function ScheduleApp() {
                 />
               </div>
             </div>
-
-            <button
-              className="bg-primary h-min text-white px-4 py-2 mt-9 rounded-lg hover:bg-secondary"
-              onClick={() => removeAvailability(index)}
-            >
-              Remove
-            </button>
+            <div className="flex items-center">
+              <button
+                className="bg-secondary h-min text-white px-4 py-2 rounded-lg hover:bg-blue-800"
+                onClick={() => removeAvailability(index)}
+              >
+                Remove
+              </button>
+            </div>
           </div>
         ))}
       </div>
       <div className="flex justify-center space-x-4 mb-4">
         <button
-          className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary"
+          className="bg-secondary text-white px-4 py-2 rounded-lg hover:bg-blue-800"
           onClick={addAvailability}
         >
           Add Availability
         </button>
         <button
-          className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary"
+          className="bg-secondary text-white px-4 py-2 rounded-lg hover:bg-blue-800"
           onClick={handleSubmit}
         >
           Submit
@@ -233,7 +234,7 @@ export default function ScheduleApp() {
                 <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                   <button
                     type="button"
-                    className="mt-3 text-white inline-flex w-full justify-center rounded-md bg-primary px-3 py-2 text-sm font-semibold shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-secondary sm:mt-0 sm:w-auto"
+                    className="mt-3 text-white inline-flex w-full justify-center rounded-md bg-secondary px-3 py-2 text-sm font-semibold shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-blue-800 sm:mt-0 sm:w-auto"
                     onClick={() => setShowConfirmation(false)}
                   >
                     Close
