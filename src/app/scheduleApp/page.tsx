@@ -84,10 +84,10 @@ export default function ScheduleApp() {
   };
 
   return (
-    <div>
+    <div className="bg-primary p-4 md:p-10 rounded-md shadow-lg">
       <h1 className="text-center text-5xl p-8">Schedule Piano Lessons</h1>
       <p className="mx-4 text-xl">Enter your Name and Phone Number.</p>
-      <form className="bg-gray-100 p-4 mx-4 my-4 rounded-lg">
+      <form className=" p-4 mx-4 my-4 rounded-lg">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
           {/* Name Field */}
           <div className="flex flex-col md:flex-row md:items-center">
