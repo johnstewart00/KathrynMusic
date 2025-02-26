@@ -12,7 +12,7 @@ export const HeaderButton = ({
 }) => {
   return (
     <Link
-      className="px-3 py-3 hover:bg-gray-200 active:bg-gray-400 hover:text-primary"
+      className="px-3 py-1 hover:bg-secondary active:bg-gray-400 hover:text-white rounded-md m-2"
       href={href}
     >
       {children}
